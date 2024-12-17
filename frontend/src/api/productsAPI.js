@@ -2,6 +2,10 @@ import { create } from "@mui/material/styles/createTransitions";
 import axios from "./axios";
         
 const listProduct = {
+  getrecommen(id){
+    const url =  `products/${id}/similar`
+    return axios.get(url);
+  },
   getAllNewProducts(category) {
         const url = `products/latest?category=${category}`;
     return axios.get(url);
